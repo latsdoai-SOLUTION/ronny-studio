@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ronny-studio
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    disk:
+      name: ronny-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: APP_PASSWORD          # סיסמה לכניסה (רוני מהטלפון)
+        sync: false
+      - key: PERPLEXITY_API_KEY    # גילוי לידים עם מקורות
+        sync: false
+      - key: ANTHROPIC_API_KEY     # ניסוח פניות/תסריטים (שלב הבא)
+        sync: false
+      - key: RONNY_AVATAR
+        value: /app/engine/profile.jpg
