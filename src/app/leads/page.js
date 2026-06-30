@@ -46,4 +46,19 @@ export default function Leads() {
                     {l.source ? (
                       <a href={l.source} target="_blank" rel="noreferrer" className="text-[11px] text-accent mt-0.5 inline-block hover:underline">🔗 מקור</a>
                     ) : l.handle ? (
-                      <div 
+                      <div className="text-[11px] text-accent mt-0.5">{l.handle}</div>
+                    ) : null}
+                    <div className="mt-2.5 flex items-center justify-between">
+                      <StatusSelect id={l.id} status={l.status} />
+                      {l.next && l.next !== "—" && <span className="text-[10px] text-gold font-semibold">⏰ {l.next}</span>}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
