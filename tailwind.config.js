@@ -19,12 +19,4 @@ module.exports = {
         green: "#7FD18C",
         greenSoft: "#16231A",
         gold: "#E0B85F",
-        goldSoft: "#2A2415",
-      },
-      fontFamily: {
-        sans: ["Heebo", "Assistant", "system-ui", "sans-serif"],
-      },
-    },
-  },
-  plugins: [],
-};
+        goldSoft:

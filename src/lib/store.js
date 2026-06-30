@@ -45,45 +45,4 @@ function slug(s) {
   return (b ? b.slice(0, 30) : "lead") + "-" + rnd;
 }
 
-// Append new leads, skipping ones whose brand already exists. Returns the added leads.
-export function addLeads(items) {
-  const leads = getLeads();
-  const existing = new Set(leads.map((l) => l.brand.trim()));
-  const added = [];
-  for (const it of items) {
-    if (!it || !it.brand || existing.has(it.brand.trim())) continue;
-    const lead = {
-      id: slug(it.brand),
-      brand: it.brand,
-      niche: it.niche || "—",
-      tier: it.tier || "B",
-      market: it.market || "ישראלי",
-      channel: it.channel || "—",
-      handle: it.handle || "",
-      source: it.source || "",
-      angle: it.angle || "",
-      status: "חדש",
-      hot: false,
-      next: "חדש 🆕",
-    };
-    leads.push(lead);
-    existing.add(lead.brand.trim());
-    added.push(lead);
-  }
-  if (added.length) write("leads.json", leads);
-  return added;
-}
-
-export function getTodayOpportunities() {
-  const leads = getLeads();
-  const hot = leads.filter((l) => l.hot);
-  return (hot.length ? hot : leads).slice(0, 3);
-}
-
-export function getStats() {
-  const leads = getLeads();
-  const by = {};
-  for (const s of STATUSES) by[s] = 0;
-  for (const l of leads) by[l.status] = (by[l.status] || 0) + 1;
-  return { total: leads.length, by };
-}
+// Append new leads, skipping ones whose brand already exists. Returns the 

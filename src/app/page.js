@@ -60,32 +60,4 @@ export default function Today() {
                 <div className="text-[12.5px] text-muted leading-snug mt-0.5 line-clamp-2">{o.angle}</div>
                 <div className="text-[11.5px] text-ink/55 mt-1">📨 {o.channel}</div>
               </div>
-              <div className="glow-num w-8 h-8 shrink-0 rounded-full text-[#1A140F] text-[14px] font-black flex items-center justify-center">{i + 1}</div>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-7">
-        {[
-          ["סה״כ לידים", s.total],
-          ["טיוטה מוכנה", s.by["טיוטה מוכנה"] || 0],
-          ["נשלח", s.by["נשלח"] || 0],
-          ["במעקב", s.by["מעקב"] || 0],
-        ].map(([label, value], i) => (
-          <div key={label} className={`fade-up card lift d${i + 1} p-4`}>
-            <div className="flex items-center justify-between">
-              <div className="text-[28px] font-black hero-title leading-none">{value}</div>
-              <span className="w-2.5 h-2.5 rounded-full" style={{ background: stat[i], boxShadow: `0 0 10px ${stat[i]}` }} />
-            </div>
-            <div className="text-[12px] text-muted mt-2">{label}</div>
-          </div>
-        ))}
-      </div>
-
-      <div className="fade-up d4 alert-pos rounded-2xl p-4 text-[13.5px] text-green leading-relaxed">
-        💡 כלל המנוע: {set.rules ? set.rules[1] : "טוב מספיק שמתפרסם מנצח מושלם בטיוטות."}
-      </div>
-    </div>
-  );
-}
+              <div className="glow-num w-8 h-8 shrink-0 rounded-full text-[#1A140F] text-[14px] font-black flex items-center justi

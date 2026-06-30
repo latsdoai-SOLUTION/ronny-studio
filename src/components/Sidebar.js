@@ -31,27 +31,4 @@ export default function Sidebar() {
         {NAV.map((n) => {
           const on = n.href === "/" ? path === "/" : path.startsWith(n.href);
           return (
-            <Link
-              key={n.href}
-              href={n.href}
-              className={
-                "relative flex items-center gap-3 px-3.5 py-3 rounded-2xl text-[15px] transition-all duration-150 " +
-                (on
-                  ? "bg-white/[0.07] text-ink font-bold border border-white/10"
-                  : "text-muted hover:text-ink hover:bg-white/[0.04]")
-              }
-            >
-              {on && <span className="absolute right-0 top-1/2 -translate-y-1/2 w-[3px] h-6 rounded-full dotgrad" />}
-              <span className="text-[18px]">{n.icon}</span>
-              <span>{n.label}</span>
-            </Link>
-          );
-        })}
-      </nav>
-
-      <div className="mt-auto rounded-2xl bg-white/[0.03] border border-white/[0.06] p-3.5 text-[11.5px] text-muted leading-relaxed">
-        ⚡ זורקת מינימום → מקבלת תוצר מוכן.
-      </div>
-    </aside>
-  );
-}
+     
